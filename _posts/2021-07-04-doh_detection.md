@@ -111,7 +111,7 @@ features_drop = list(train_drop.columns[1:])
 ```
 sns.barplot(x=clf.best_estimator_.feature_importances_,y=features_drop)
 ```
-![](images/doh_fig_output_20_1.png)
+![](/images/doh_fig_output_20_1.png)
 
 可以看到，在没有连接时长和延迟等易被混淆攻击的特征时，出入口的包特征加上`xgboost`的强大的学习威力，我们依然可以得到一个适用于该数据集的分类模型。如果想进一步探索更加稳定的特征组合，我们可能需要独立采集的可能含有攻击混淆流量的测试数据集，以验证其在真实环境下的可靠性，而非在此固定数据集里可能由`xgboost`的强大学习能力带来对该训练数据集的过拟合。
 
