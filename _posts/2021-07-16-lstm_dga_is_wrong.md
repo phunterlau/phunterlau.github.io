@@ -16,7 +16,7 @@ Because we are now living in the deep learning era, why not use a deep learning 
 
 ### LSTM looks more "deep learning"
 
-In late 2016, Endgame (now Elastic) researchers developed a simple LSTM that uses the order of occurrence of adjacent characters in a domain name as input to build a classification model; in 2018, the article Duc Tran et al "A LSTM-based framework for handling multiclass imbalance in DGA botnet detection" presents an improvement on unbalanced classification, as well as the open source code LSTM. MI has been mentioned numerous times in the industry. Both are based on this simple LSTM network structure (from endgame's open-source code and LSTM. MI makes use of the same).
+In late 2016, Endgame (now Elastic) researchers developed a simple LSTM that uses the order of occurrence of adjacent characters in a domain name as input to build a classification model; in 2018, the article Duc Tran et al "A LSTM-based framework for handling multiclass imbalance in DGA botnet detection" presents an improvement on unbalanced classification, as well as the open source code LSTM.MI has been mentioned numerous times in the industry. Both are based on this simple LSTM network structure (from endgame's open-source code and LSTM.MI makes use of the same).
 
 ```
 def build_model(max_features, maxlen):
@@ -44,7 +44,7 @@ There are white-box attacks that know the training dataset or network structure 
 
 "CharBot: A Simple and Effective Method for Evading DGA Classifiers" is a white-box attack method that requires very little programming: choose a random domain name from the training dataset's negative samples and randomly pick and switch two chars into another two, then replace the TLD. This simple attack can reduce the accuracy of models like LSTM.MI to lower than 90%, and the detection rate can be as low as 30%.
 
-Some black-box attack models, such as "MaskDGA: A Black-box Evasion Technique Against DGA Classifiers and Adversarial Defenses," are also interesting. By simply creating a shallow adversarial network, one can reduce the F-1 score of models like LSTM-MI from 0.977 to 0.495, making it indistinguishable from a random guess. DeepDGA, DeceptionDGA, and other similar approaches take a similar approach.
+Some black-box attack models, such as "MaskDGA: A Black-box Evasion Technique Against DGA Classifiers and Adversarial Defenses," are also interesting. By simply creating a shallow adversarial network, one can reduce the F-1 score of models like LSTM.MI from 0.977 to 0.495, making it indistinguishable from a random guess. DeepDGA, DeceptionDGA, and other similar approaches take a similar approach.
 
 As we can see, LSTM DGA detection is extremely vulnerable to simple sample-based adversarial attacks, not to mention that the model's claimed 99.9 percent accuracy may be incorrect for domains appearing in large-scale DNS traffic logs outside the validation dataset. LSTM DGA detection, on the other hand, generally performs poorly for dictionary-like DGAs with non-random characters like `suppobox`.
 
