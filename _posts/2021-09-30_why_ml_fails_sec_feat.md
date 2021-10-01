@@ -47,7 +47,7 @@ Algorithms and modeling in cybersecurity do not have intuitive definitions of ex
 
 This post examines the primary reasons why machine learning models fail to solve cybersecurity issues. Other topics, such as understanding and dealing with model fragility in a system-wide context, will be covered in future posts. Not only in cybersecurity, but also in many other fields, researchers and engineers place too much emphasis on model work[*], ignoring the fact that algorithm and modeling are system engineering problems, and that finding more and better samples, more descriptive features, and dealing with prediction errors are all important steps in the system. We hope that by focusing on systems and engineering, machine learning and other artificial intelligence algorithms will be able to play a meaningful role in the field of cybersecurity.
 
-## 参考文献
+## Reference
 
 * Raff et al, Malware Detection by Eating a Whole EXE <https://arxiv.org/abs/1710.09435>
 * Vinayakumar R., Soman K.P., DeepMalNet: Evaluating shallow and deep networks for static PE malware detection <https://doi.org/10.1016/j.icte.2018.10.006>
