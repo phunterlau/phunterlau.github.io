@@ -81,8 +81,7 @@ Similarly, we have discussed the vulnerability of models from a systems engineer
 * Uncovering The “Unknown Unknowns”: Why Threat Hunting is a Security Must-Have <https://www.crowdstrike.com/blog/uncovering-the-unknown-unknowns-why-threat-hunting-is-a-security-must-have/>
 * `domain2vec` was mentioned in this DGA detection blog <https://toooold.com/2021/07/16/lstm_dga_is_wrong.html>
 * A small leak will sink a great ship <https://idioms.thefreedictionary.com/a+small+leak+will+sink+a+great+ship>
-* Sophos AI YaraML Rules Repository
-<https://github.com/sophos-ai/yaraml_rules>
+* Sophos AI YaraML Rules Repository <https://github.com/sophos-ai/yaraml_rules>
 * Augmented Intelligence to Scale Humans Fighting Botnets <https://www.botconf.eu/2017/augmented-intelligence-to-scale-humans-fighting-botnets/>
 * 7 Steps to Ensure and Sustain Data Quality <https://towardsdatascience.com/7-steps-to-ensure-and-sustain-data-quality-3c0040591366>
 * FATE (Federated AI Technology Enabler) <https://github.com/FederatedAI/FATE>
