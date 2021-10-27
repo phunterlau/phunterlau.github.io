@@ -1,6 +1,5 @@
 # Tips of common data tools on M1 Macbook Air
 
-
 Long story short, the M1 Macbook Air is so sweet and it is friendly to data modeling work with `python`.
 
 ## First, homebrew and miniforge
@@ -9,9 +8,9 @@ The easiest start comes from `Homebrew` by following the official installation a
 
 The next step is `conda` via <https://github.com/conda-forge/miniforge>. Please make sure to choose `Miniforge3-MacOSX-arm64`. It runs like a charm.
 
-## `xgboost`
+## xgboost
 
-`xgboost` comes with naive M1 support and the best practice as tody is compiling via `pip` with the `xcode`'s `clang`. Some missing libs can be either install via `brew` or use `conda`'s `numpy` and `scipy`:
+`xgboost` comes with native M1 support and the best practice as tody is compiling via `pip` with the `xcode`'s `clang`. Some missing libs can be either install via `brew` or use `conda`'s `numpy` and `scipy`:
 
 ```
 brew install cmake
