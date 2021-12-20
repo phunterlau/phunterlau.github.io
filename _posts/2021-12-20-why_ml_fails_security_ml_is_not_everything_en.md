@@ -10,7 +10,7 @@ After talking about the first 3 reasons: [wrong features](https://toooold.com/20
 * Machine learning is a tip of the iceberg in AI
 * Have you thought of any simpler approaches?
 
-## Nope, deep learning is not your solution!
+## Nope, deep learning is not your solution
 
 We see a lot of cases where people think machine learning only means deep learning. Deep neural networks have demonstrated a powerful advantage for representation learning in areas such as images and text, as well as the magical effect of transfer learning in solving multiple problems brought by neural networks, which brings many sparkles to the mind to solve cybersecurity problems. We're all wondering if this can help cybersecurity: can I crack the hidden features in the encrypted traffic? can I transfer the features from windows PE to Linux ELF? However, "there is no such thing as a free lunch," and deep learning has gained its proble solving magic at the expense of its applicability. Some failures that have emerged in recent years have taught us some lessons.
 
@@ -60,7 +60,7 @@ In the problem-solving process, we must stick to the main goal of "problem solvi
 
 We have received a lot of useful feedback and suggestions for this blog series, and we hope that all of you will contribute to the discussion by combining your own work and research with the topic of "why machine learning fails". Data models in the field of cybersecurity have only recently been used on a large scale, bringing with them many issues and difficulties in the industry, which invariably entails numerous failures, all of which are predictable failures in accordance with modern scientific research methods. I also believe that by learning from the frustration of many failures and the surprise of a few successes, we together can draw enough lessons and create a general methodological framework for data modeling in cybersecurity.
 
-## Reference 
+## Reference
 
 * Joshua Saxe with Hillary Sanders, Malware Data Science: Attack Detection and Attribution <https://nostarch.com/malwaredatascience>
 * Mostafa Hassan, "Cracking Random Number Generators using Machine Learning – Part 1: xorshift128" <https://research.nccgroup.com/2021/10/15/cracking-random-number-generators-using-machine-learning-part-1-xorshift128/>
