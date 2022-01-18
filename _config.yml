@@ -15,7 +15,7 @@ email: phunter.lau@gmail.com
 twitter_username: @PhunterLau
 
 # Set this to true to get LaTeX math equation support
-use_math: true
+use_math:
 
 # Add your Google Analytics ID here if you have one and want to use it
 google_analytics:
