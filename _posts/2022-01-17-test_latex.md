@@ -7,3 +7,4 @@ $$
 $$
 
 sample inline rendering for $\LaTeX$
+
