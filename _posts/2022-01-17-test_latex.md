@@ -1,4 +1,4 @@
-# Test LaTeX rendering
+# Test $LaTeX$ rendering
 
 Sample equation blocks
 
