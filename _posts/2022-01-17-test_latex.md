@@ -7,3 +7,9 @@ $$
 $$
 
 sample inline rendering for $\LaTeX$
+
+sample python code
+
+```python
+import xgboost
+```
