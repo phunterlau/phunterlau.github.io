@@ -21,12 +21,14 @@ use_math: true
 google_analytics: G-E9H6X1L7DY
 
 # Everything below here can be ignored, unless you want to change the theme entirely
-theme: minima
+#theme: minima
+theme: jekyll/minima
 plugins:
   - jekyll-feed
   - jekyll-gist
   - jekyll-octicons
   - jekyll-github-metadata
+  - jekyll-remote-theme
 
 titles_from_headings:
   enabled:     true
