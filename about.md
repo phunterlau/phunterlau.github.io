@@ -1,6 +1,6 @@
 # About
 
-This guy is too old to code. email me at <toooold.tocode@gmail.com>
+Email me at <toooold.tocode@gmail.com>
 
 > "Je n’ai fait celle-ci plus longue que parce que je n’ai pas eu le loisir de la faire plus courte." -- Blaise Pascal
 
