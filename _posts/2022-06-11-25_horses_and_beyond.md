@@ -20,8 +20,8 @@ The "25 horses problem" ([Link](https://mindyourdecisions.com/blog/2017/05/11/ca
 
 Horses are divided into five groups and labeled `A` to `E` and `1` to `5` within each group. Following that, we organize the races in two batches:
 
-* batch 1 to conclude top 3 within each group (colored orange) where `A1` > `A2` > `A3` etc;
-* batch 2 for top 1s of all groups to conclude the overall top 1 (colored red), plus an extra round for top 2 and 3.
+* batch 1 to conclude top 3 within each group (colored in green) where `A1` > `A2` > `A3` etc;
+* batch 2 for top 1s of all groups to conclude the overall top 1 (colored in red), plus an extra round for top 2 and 3 (colored in orange).
 
 Batch 1 is simple to understand because the overall top three must be at least the top three in each group. The first step in batch 2 is also simple, because the overall top 1 must be the fastest among all top 1. The trick is to use only one extra round for the top two and three horses: why do we need to compare `A2` `A3` `B1` `B2` and `C1`? Why do they appear diagonal in the matrix?
 
