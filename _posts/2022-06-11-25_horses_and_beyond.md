@@ -18,7 +18,7 @@ The "25 horses problem" ([Link](https://mindyourdecisions.com/blog/2017/05/11/ca
 
 ![](/images/25-horse-riddle.001.png)
 
-Each horse is divided into five groups and labeled `A` to `E` and `1` to `5` within each group. Following that, we organize the races in two batches:
+Horses are divided into five groups and labeled `A` to `E` and `1` to `5` within each group. Following that, we organize the races in two batches:
 
 * batch 1 to conclude top 3 within each group (colored orange) where `A1` > `A2` > `A3` etc;
 * batch 2 for top 1s of all groups to conclude the overall top 1 (colored red), plus an extra round for top 2 and 3.
