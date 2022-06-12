@@ -49,7 +49,7 @@ We would like to extend this problem to the minimum number of races for `N` cars
 * The number of cars/horses must be a quadratic to the track size `T` (`N`=`T^2`)
 * The track size `T` must be `(k-1)*(k+2)/2`
 
-Constraint #2 of `T`=`(k-1)*(k+2)/2` can be derived by induction: when we have the overall top 1 and want to determine the next best `k-1` horses/cars, we select `T` other horses/cars which have fewer than `k` horses/cars faster than them, so `T` must be constructed as `(k-1)+(k-1)+(k-2)+...+2+1` which is `(k-2)*(k+2)/2`.
+Constraint #2 of `T`=`(k-1)*(k+2)/2` can be derived by induction: when we have the overall top 1 and want to determine the next best `k-1` horses/cars, we select `T` other horses/cars which have fewer than `k` horses/cars faster than them, so `T` must be constructed as `(k-1)+(k-1)+(k-2)+...+2+1` which is `(k-1)*(k+2)/2`.
 
 With these two constraint conditions, the approach above can always give the answer to the number of races as `T+2`. In short, when 9 cars race (`N`=9, `T`=3, `k`=2), the number of rounds is `T`+2 = 5; when 25 horses race (`N`=25, `T`=5, `k`=3), the number of rounds is `T`+2 = 7; when there are 58140625 dragonflies race for the top 123 ranks, the number of round must be 7627.
 
@@ -72,3 +72,9 @@ The above approach also implies `T` > `k` because of `T` construction method for
 ## Summary
 
 "25 horses problem" and "9 race cars problem" are both very nice puzzles. We leverage the heap data structure to solve the quadratic case for a general equation of number of races as track size plus 2 (`T+2`). We further extend to the higher dimension tensor case for a more general equation as `(T^j-1)/(T-1)+(j-1)` where `j` is the power index of track size to the number of horses/cars.
+
+If we would like to loose all constraints to a much more general problem, we can take a look at this difficulty discrete math topic "Sorting by k-ary Comparisons" `*`, however the exact solution is not guaranteed.
+
+## Reference
+
+* "Sorting by k-ary Comparisons" <https://faculty.math.illinois.edu/~west/regs/ksetsort.html>
