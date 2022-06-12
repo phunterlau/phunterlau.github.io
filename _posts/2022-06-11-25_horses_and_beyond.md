@@ -1,8 +1,8 @@
-# Nine-cars, twenty-five horses and beyond
+# Nine cars, twenty-five horses and beyond
 
 ## TL, DR
 
-"25 horse problem" and "9 cars problem" can have a general solution and a simple equation when we construct heap. The approach can be extended into higher dimension tensors and solved with a more general equation.
+"25 horses problem" and "9 cars problem" can have a general solution and a simple formula when we construct a max heap. The approach can be extended into higher dimension tensors and solved with a more general formula.
 
 ## The problem
 
@@ -18,7 +18,7 @@ The "25 horses problem" ([Link](https://mindyourdecisions.com/blog/2017/05/11/ca
 
 ![](/images/25-horse-riddle.001.png)
 
-Each horse is divided into five groups and labeled `A` to `E` and `1` to `5` within each group. Following that, we organize the races in two stages:
+Each horse is divided into five groups and labeled `A` to `E` and `1` to `5` within each group. Following that, we organize the races in two batches:
 
 * batch 1 to conclude top 3 within each group (colored orange) where `A1` > `A2` > `A3` etc;
 * batch 2 for top 1s of all groups to conclude the overall top 1 (colored red), plus an extra round for top 2 and 3.
@@ -31,7 +31,7 @@ This leads to a widely used data structure: [heap](https://en.wikipedia.org/wiki
 
 > "a heap is a specialized tree-based data structure which is essentially an almost complete[1] tree that satisfies the heap property: in a max heap, for any given node C, if P is a parent node of C, then the key (the value) of P is greater than or equal to the key of C."
 
-We want a max heap to conclude the top three horses in this problem, so we can build the heap by:
+We want a max heap to conclude the top three horses in this problem, so we can build the heap as:
 
 * insert the first 5 races for top 3s;
 * insert one more race for all top 1s;
@@ -44,7 +44,7 @@ Meanwhile, we can see that the 9 cars problem can be solved by holding three rac
 
 ## Go beyond the 2nd grade
 
-We would like to extend this problem to the minimum number of races for `N` cars at track size `T` get the top `k` cars. The approach above implies two constraints:
+We would like to extend this problem to the minimum number of races for `N` cars at track size `T` get the top `k` cars/horses. The approach above implies two constraints:
 
 * The number of cars/horses must be a quadratic to the track size `T` (`N`=`T^2`)
 * The track size `T` must be `(k-1)*(k+2)/2`
@@ -57,11 +57,11 @@ With these two constraint conditions, the approach above can always give the ans
 
 Can we get rid of constraint #1? Yes, in two ways. If `N` is not a square number, such as 24 horses instead of 25, using the next larger square number as the new `N` also works, so 24 horses still require 7 races to find the top three fastest. What is the other way?
 
-A more interesting extension is: does this approach still work if `N` = `T^j` where `j` can be 3,4,5 or more instead of 2? Let's stick with the heap method for now.
+A more interesting extension is: does this approach still work if `N` = `T^j` where `j` can be 3,4,5 or more instead of 2? Let's stick with the heap construction method.
 
-If `j`=1 which means 5 horses finding top 1, obviously we only need to race once, but let's keep in mind the problem is finding max (top 1) in a sorted array (**vector**); if `j`=2, the problem is top-3 in a sorted **matrix** and solution above as `T+2` can be rewritten as `T+j` because the matrix form introduces `T` races for the batch 1 comparison and one extra race for the diagonal comparison, so 25 horses need 5+2 races; if `j`=3 or above, the problem becomes finding top k in the sorted **tensor** (yes, it is the same tensor in deep learning), and here it is how to deal with the tensor scenario:
+Vector can be considered a special type of matrix as 1xN matrix while matrix is a special type of tensor of NxM (2 tensor dimensions). When `j`=1 which means 5 horses finding top 1, obviously we only need to race once, but let's keep in mind the problem is finding max (top 1) in a sorted array (**vector**); when `j`=2, the problem is top-3 in a sorted **matrix** and solution above as `T+2` can be rewritten as `T+j` because the matrix form introduces `T` races for the batch 1 comparison and one extra race for the diagonal comparison, so 25 horses need 5+2 races; if `j`=3 or above, the problem becomes finding top k in the sorted **tensor** (yes, it is the same tensor in deep learning), and here it is how to deal with the tensor scenario:
 
-By following the heap construction approach, when `j`=3 as a 3-D tensor matrix, we need to run `T^2` races to reduce the problem to `j`=2 because each dimension in the tensor need the ranks in individual group of `T` size vector and we also need one extra race for the top 1s of each higher dimension. After that, we reduce the problem to `j_new=2` and we know the answer of `T+j_new`, so the total number of races becomes `T^2+1+T+j_new` which is `T^2+T+j`. So, my dear readers might have a wild guess, for tensor of dimension `j`, the number of races should be `T^(j-1)+T^(j-2)+...+T^2+T+j` which is `(T^j-1)/(T-1)+(j-1)`?
+By following the heap construction approach, when `j`=3 as a 3-D tensor, we need to run `T^2` races to reduce the problem to `j`=2 because each dimension in the tensor need the ranks in individual group of `T` size vector and we also need one extra race for the top 1s of each higher dimension. After that, we reduce the problem to `j_new=2` and we know the answer of `T+j_new`, so the total number of races becomes `T^2+1+T+j_new` which is `T^2+T+j`. So, my dear readers might have a wild guess, for tensor of dimension `j`, the number of races should be `T^(j-1)+T^(j-2)+...+T^2+T+j` which is `(T^j-1)/(T-1)+(j-1)`?
 
 The guess is correct and easy to understand: for each higher tensor dimension, we need to compare each dimension for `T^(j-1)` times to reduce to a lower tensor dimension, and use one extra race for this tensor dimension's top 1, till we get to `j=2`, so the summation of races become `(T^j-1)/(T-1)+(j-1)`. I don't have a good tool to visualize it but I believe my dear readers can use their imaginations to solve this high dimension tensor case.
 
