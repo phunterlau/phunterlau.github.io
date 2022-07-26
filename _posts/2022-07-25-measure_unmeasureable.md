@@ -29,7 +29,7 @@ A few days later.
 Before D-Day in WWII, the US Army needed to estimate the number of Panzer V tanks to be used, but the Allies only had a few serial numbers of captured or destroyed tanks, so mathematicians devised an estimation method. The approximated median can be used to estimate the number of tanks:
 
 $$
-\hat{N} = \frac{k+1}{k}m -1 = m + \frac{m}{k} -1
+\widehat{N} = \frac{k+1}{k}m -1 = m + \frac{m}{k} -1
 $$
 
 where $m$ is the largest series number and $k$ is the sample size. It can be understood in this way:
