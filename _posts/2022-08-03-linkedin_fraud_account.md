@@ -2,7 +2,7 @@
 
 Disclaimer: Nothing in this blog is related to the author's day-to-day work. The content is neither affiliated nor sponsored by any companies. I am not employed by Linkedin.
 
-![Linkedin Fraud](images/linkedin-fraud.001.png)
+![Linkedin Fraud](/images/linkedin-fraud.001.png)
 
 On Linkedin, I believe many of us have received such "please add me to your professional network" requests:
 
