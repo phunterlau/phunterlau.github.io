@@ -64,3 +64,4 @@ For $n=100$ in our case, $95\%$ confidence level required $p$ from $0$ to $0.03$
 ## Reference
 
 * Confidence interval with zero events <http://www.pmean.com/01/zeroevents.html>
+* Binomial confidence intervals for rare events: importance of defining margin of error relative to magnitude of proportion <https://arxiv.org/pdf/2109.02516.pdf>
