@@ -46,7 +46,7 @@ $$
 
 Why do we need the Fermi estimation method if it appeared to be just some common sense factors? The method could provide an answer to the following question: what about the upper and lower limits? According to Fermi's estimation, it was overestimating or underestimating by a factor of 2 to logarithmic scale. For 3 scaling factors, the upper limit should be $58.7 M \times 2^{\sqrt{3}} = 195.0 M$ and the lower limit $58.7 M \div 2^{\sqrt{3}} = 17.7 M$, so we could report to our customers:
 
-> The global number of `XcodeGhost` infected devices was approximately 59 million, with a range of 195 million to 18 million, so please take action.
+> The global number of `XcodeGhost` infected devices was approximately 59 million, with a range of 18 million to 195 million, so please take action.
 
 Yes, there could be up to 200 million infected devices! Without knowing each step above, it was impossible to believe.
 
