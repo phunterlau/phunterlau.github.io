@@ -76,3 +76,4 @@ Estimation with limited information, or "Guesstimation," is widely used in many 
 * How exactly Fermi estimated the atomic bomb <https://physics.stackexchange.com/questions/19567/how-did-enrico-fermi-calculate-the-classical-fermi-problem>
 * Security firm publishes list of some of the iOS apps infected by XcodeGhost <https://9to5mac.com/2015/09/21/xcodeghost-infected-apps/>
 * Emails reveal 128 million iOS users were affected by ‘XcodeGhost’ malware <https://9to5mac.com/2021/05/07/emails-reveal-128-million-ios-users-were-affected-by-xcodeghost-malware/>
+* Archive post of XcodeGhost discovery in wooyun (in Chinese) <https://paper.seebug.org/papers/Archive/drops2/Xcode%E7%BC%96%E8%AF%91%E5%99%A8%E9%87%8C%E6%9C%89%E9%AC%BC%20%E2%80%93%20XcodeGhost%E6%A0%B7%E6%9C%AC%E5%88%86%E6%9E%90.html>
