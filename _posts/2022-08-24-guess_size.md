@@ -20,8 +20,6 @@ We knew it would go viral because it was an anomaly that caused a spike of 220k 
 
 Fortunately, we had collected DNS traffic data from our global collaborative customers and discovered that it was trending globally. However, DNS traffic data was the only source of information. It was sampled at random, with a strong regional bias, and it lacked any device information, whether iOS or Android, PC or mobile. With such limited data, how could we calculate the number of infected devices?
 
-The breakthrough came from answering this question, "Customers won't need the exact number to make decisions, right?" No, they won't need it, since they would take action no matter it was 9 million or 20 million. So, a smart solution came from Fermi estimation `*`.
-
 Answering the question, "Customers won't need the exact number to make decisions, right?" led to the breakthrough. No, they won't need it because they'd take actions whether there were 9 million or 20 million. As a result, Fermi estimation `*` provided a clever solution.
 
 > "An example is Enrico Fermi's estimate of the strength of the atomic bomb that detonated at the Trinity test, based on the distance traveled by pieces of paper he dropped from his hand during the blast. Fermi's estimate of 10 kilotons of TNT was well within an order of magnitude of the now-accepted value of 21 kilotons." Wikipedia `*`
