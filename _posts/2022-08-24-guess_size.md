@@ -24,7 +24,7 @@ Answering the question, "Customers won't need the exact number to make decisions
 
 > "An example is Enrico Fermi's estimate of the strength of the atomic bomb that detonated at the Trinity test, based on the distance traveled by pieces of paper he dropped from his hand during the blast. Fermi's estimate of 10 kilotons of TNT was well within an order of magnitude of the now-accepted value of 21 kilotons." Wikipedia `*`
 
-The exact procedure of Fermi's example included some physics details`*` but the long and short of it is that we would need to find all scaling factors to connect our observations in the sample data to the target measurement. We needed these three factors to guess how the entire dataset would look:
+The exact procedure of Fermi's example included some physics details`*` but long story short, we would need to find all scaling factors to connect our observations in the sample data to the target measurement. We needed these three factors to guess how the entire dataset would look:
 
 * DNS data sampling rate
 * sampling bias in different regions
