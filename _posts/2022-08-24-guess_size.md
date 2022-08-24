@@ -36,7 +36,7 @@ The first was simple, or we had little to do, but we had to accept 1%, as agreed
 
 The sampling bias by region was tricky: in 2015, we only had data from the EU, Latin America, Australia, and South Asia, with no idea of North America or China, the world's two largest telecom regions. Fortunately, we had some snapshot samples from a pilot program with a list of customers, including customers from North America and China, about a year ago. Although data from North America and China were discontinued, some other customers remained with the program, so we used them as anchor points: we compared the ratio of North American and China vs anchor customers from a year ago to the global data vs anchor customers in 2015, and we concluded that the sampling bias rate was about 0.5.
 
-The number of iOS devices for each client IP was solved by using probability. We discovered that the average IP had about 2 mobile devices, which could be either Android or iOS, and that the Android vs iOS market share was roughly 1:1. So, what was the expected number of iOS devices when we discovered the `XcodeGhost` domain, indicating at least one iOS device behind this IP? The answer was 1.33. Please consider it a good exercise and have some fun with it.
+The number of iOS devices for each client IP was solved by using probability. We studied that on average each IP had about 2 mobile devices, which could be either Android or iOS, and that the Android vs iOS market share was roughly 1:1. So, what was the expected number of iOS devices when we discovered the `XcodeGhost` domain, indicating at least one iOS device behind this IP? The answer was 1.33. Please consider it a good exercise and have some fun with it.
 
 So the estimated number of `XcodeGhost` infected devices became
 
