@@ -76,12 +76,3 @@ Estimation with limited information, or "Guesstimation," is widely used in many 
 * How exactly Fermi estimated the atomic bomb <https://physics.stackexchange.com/questions/19567/how-did-enrico-fermi-calculate-the-classical-fermi-problem>
 * Security firm publishes list of some of the iOS apps infected by XcodeGhost <https://9to5mac.com/2015/09/21/xcodeghost-infected-apps/>
 * Emails reveal 128 million iOS users were affected by ‘XcodeGhost’ malware <https://9to5mac.com/2021/05/07/emails-reveal-128-million-ios-users-were-affected-by-xcodeghost-malware/>
-
-Surely, some details were modified to simplify the story. We were also searching for the source of this infection, later on
-We answered the first question by the correlation model, which later on got its fancy name `domain2vec`. The anomaly domain `init.icloud-analysis.com` had its distributed representation, a numerical dense vector, and its learned vector had small open angles with a few other vectors for domains like:
-
-* `weixin.qq.com`
-* `music.netease.com`
-* `ios.meitu.com`
-
-which represented services for a few apps serving China market, like `wechat` `meitu` etc. We also confirmed the learned correlation was caused by the concurrence between `init.icloud-analysis.com` and these service domains. So, we guessed it might be a malware targeting iOS?
