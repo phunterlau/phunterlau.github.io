@@ -2,7 +2,7 @@
 
 Since ChatGPT is good at hallucination, why not make a `CatGPT` out of it? Let's engineer the prompt step by step:
 
-# Step 1: do you know `cat`?
+# Step #1: do you know `cat`?
 
 **Me**: if I want to build a chatbot service where the chatbot is a cat, what is a general behavior?
 
