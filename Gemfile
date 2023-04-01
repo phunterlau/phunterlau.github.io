@@ -17,10 +17,11 @@ gem "github-pages", group: :jekyll_plugins
 group :jekyll_plugins do
   gem "jekyll-feed", "~> 0.12"
   gem 'jekyll-octicons'
+  gem 'jekyll-mermaid'
+  gem 'jekyll-mermaid-diagrams'
 end
 
 gem "jekyll-github-metadata"
-gem 'jekyll-mermaid'
 
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem
 # and associated library.
