@@ -29,6 +29,7 @@ plugins:
   - jekyll-octicons
   - jekyll-github-metadata
   - jekyll-remote-theme
+  - jekyll-mermaid
 
 titles_from_headings:
   enabled:     true
