@@ -4,7 +4,7 @@ The short answer: it’s more nuanced—agentic systems have potential, but only
 
 Recently, a colleague of mine, Jason, developed a Large Language Model (LLM)-driven agentic system to analyze cloud logs for security intrusions. Each run cost about $5, and the results were disappointing. The AI failed to detect a known intrusion, leaving Jason disillusioned and questioning the hype around AI. His frustration boiled down to one question: Why did his system underperform despite his best efforts, while other agentic systems showcased on Youtube and Arxiv seemed to work flawlessly?
 
-![Red Panda agent](/images/red-panda-agent.jpeg)
+![Red Panda agent](/images/red-panda-agent.jpg)
 
 ## Why Do We Need Agentic Systems?
 
