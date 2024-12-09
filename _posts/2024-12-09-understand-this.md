@@ -2,6 +2,12 @@
 
 It is a live blog post of some knowledge snippets of AI to bridge the gap among text books, papers, other blog posts. Most content has been posted on my Linkedin.
 
+## Understand Flash Attention, incremental computation of attention
+
+Flash Attention's incremental computation is a mathematically elegant solution to the memory bottleneck in attention mechanisms. The key insight is treating attention computation as a streaming algorithm with running statistics. Instead of materializing the full N×N attention matrix, it maintains three running statistics: maximum values (m_i) for numerical stability, softmax denominators (l_i), and partial output sums (O_i). When processing each new block, these statistics are updated using a clever rescaling factor exp(m_{i-1} - m_i) that ensures mathematical equivalence to standard attention while preventing numerical overflow. This rescaling is crucial because it allows us to update our running computations when we discover new maximum values in later blocks - effectively "correcting" our previous partial results without needing to store or recompute them. The computation is structured as a tiled algorithm where blocks of queries interact with blocks of keys and values, with all intermediate results fitting in fast SRAM. This approach reduces memory complexity from O(N²) to O(N) and significantly improves hardware utilization by maximizing the use of fast memory (SRAM) over slow memory (HBM), resulting in both better memory efficiency and faster computation. The mathematical guarantee of equivalence to standard attention, combined with these performance benefits, makes it particularly valuable for training and deploying large language models where attention computations are a major bottleneck.
+
+![alt text](/images/fine-tune.014.png)
+
 ## Understand ReAct and cross-attention
 
 How could ReAct agents be effective on reasoning and acting? What was behind "Thought Action Observation"?
