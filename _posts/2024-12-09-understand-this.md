@@ -10,7 +10,7 @@ ReAct was one of the important LLM agent techniques https://lnkd.in/gU4jB6FA and
 
 The key to ReAct's effectiveness lies in how cross-attention serves as neural bridges between these steps: it creates learnable mappings between abstract thought space and concrete action space (Thought→Action), between actions and their outcomes (Action→Observation), and between observations and updated reasoning (Observation→Thought). This creates a continuous feedback loop where each step informs the next through focused attention weights, allowing the model to learn from experience and adapt its strategies. The cross-attention mechanisms also enable the model to maintain relevant context throughout the entire process, as attention weights highlight important information from previous steps while suppressing irrelevant details. This architecture naturally implements a form of working memory and metacognition, where the model can reflect on its own reasoning and actions through the attention patterns, leading to more effective problem-solving strategies. It is one of the effective ways to extend the LLM runtime for more "smartness".
 
-![alt text](fine-tune.013.png)
+![alt text](/images/fine-tune.013.png)
 
 ## Understand constrained decoder and JSON mode
 
@@ -20,7 +20,7 @@ One of the key techniques was called constrained decoding. It bridges neural lan
 
 Surely, neither constrained decoding nor context-free generation could be the only approach of JSON mode. Meanwhile, structured generation is a superset research field of JSON generation for other structures. Structured generation is a corner stone for the agent framework, so that agents can communicate and understand in the JSON way.
 
-![alt text](fine-tune.012.png)
+![alt text](/images/fine-tune.012.png)
 
 ## Understand RoPE and lost-in-the-middle
 
@@ -30,7 +30,7 @@ Rotary Positional Embedding (RoPE) is a simple and great idea: attention is abou
 
 Let's think of RoPE like a spiral staircase in a tall tower: as you go higher (higher dimensions), you rotate faster, but the fundamental structure (relative positions) stays consistent. This allows you to keep track of where you are relative to other positions, even in a very tall tower (long context). And the "lost-in-the-middle" problem is like trying to remember specific floors in the middle of the tower: you easily remember the ground floor (start) and top floor (end), but floors in the middle blur together because they lack these distinctive reference points and each middle floor looks similar to its neighbors.
 
-![alt text](fine-tune.011.png)
+![alt text](/images/fine-tune.011.png)
 
 ## Understand speculative decoding
 
@@ -40,7 +40,7 @@ In my last post of LLM inference time https://lnkd.in/gu78UWtH I mentioned a few
 
 Such process reminds us of the modern CPU's branch predictor: when a CPU see an "if" statement, it tries to guess which way a branch will go before knowing the results, so the instruction flow can move very fast without much waiting time. Speculative decoding shortens the total execute time by replacing N times of forward pass time with a round of draft plus a single forward pass time.
 
-![alt text](fine-tune.010.png)
+![alt text](/images/fine-tune.010.png)
 
 ## Understand LLM inference time
 
@@ -54,7 +54,7 @@ where self-attention and FFN took mostly of the computing time, and we had to do
 
 We could also understand the quantization effect to speed up: attention and FFN took the most computing time, and total time was mostly proportional to number of generated tokens. If we used FP16 instead of FP32, attention and FFN could cut the computing time to half, and the total computing time could reduce ~40% (well, layer norm time didn't change much in precision). If used INT8, we could further reduce another 30% but increased the risk of precision loss.
 
-![alt text](fine-tune.009.png)
+![alt text](/images/fine-tune.009.png)
 
 ## Understand LoRA ranks
 
@@ -70,7 +70,7 @@ To understand the effect, consider each row in the matrix means update to a dime
 
 You might wonder why it is "less or equal" instead of "equal". It is because of Cauchy–Schwarz inequality for vectors https://lnkd.in/gKmjMKK6 which can also describe proper time measurement in relativity, a.k.a "you move fast your clock is slower". There is always physics!
 
-![alt text](fine-tune.008.png)
+![alt text](/images/fine-tune.008.png)
 
 ## Understand chain-of-thoughts (CoT)
 
@@ -82,7 +82,7 @@ It helps us to understand why sometimes CoT works well sometimes not: if a probl
 
 It also gives a good hint of memory package design if we want to extend such memory mechanism with longer or external memory.
 
-![alt text](fine-tune.007.png)
+![alt text](/images/fine-tune.007.png)
 
 ## Understand tool using
 
@@ -90,7 +90,7 @@ What is the magic behind LLM's tool using, like Apple Intelligence? a.k.a how co
 
 Tool using, like "function calling" in OpenAI https://lnkd.in/gjMwbmaM , opens a door to drive intelligent agents from LLM. Beyond just letting LLM generate a JSON to call an API, it is trained and tuned by aligning tasks with tool capabilities using attention of context and tools. When we use such functionalities, the LLM simply maximize the conditional probability of current context vs a tool by comparing context with tool description. That is the root reason why one must describe a tool in a concise and accurate way in any tool calling interface. We also understand tool calling doesn't need large models, since it only needs attention alignment with tools, so small on-device LLMs like Phi3 or Llama 3.2 1b can do tool calling well if instruct trained well. Yes, it is part of Apple Intelligence LLM's secret recipe.
 
-![alt text](fine-tune.006.png)
+![alt text](/images/fine-tune.006.png)
 
 ## Understand prompting
 
@@ -100,7 +100,7 @@ Most "prompting" work today is about discrete prompt, e.g. a sentence of command
 
 In short, prompting is about putting bias to models and alignment to tasks.
 
-![alt text](fine-tune.005.png)
+![alt text](/images/fine-tune.005.png)
 
 ## Understand Boltzmann distribution and neural networks
 
@@ -108,7 +108,7 @@ What exactly Geoffrey Hinton brought to neural network and AI? Statistical meani
 
 Hinton and other researchers bridged the gap between statistical physics and neural networks by interpreting neural network input as probabilities instead of numbers, so that optimization and generalization of neural networks can make sense from Boltzmann distribution. Such energy-based models were the reason why gradient decent on log(P) and why "temperature" parameter is used to control your LLM creativity. Read further at Wikipedia https://lnkd.in/geDtyTFK and congratulate that John Hopfield and Geoffrey Hinton win Nobel Prize in physics!
 
-![alt text](fine-tune.004.png)
+![alt text](/images/fine-tune.004.png)
 
 ## Understand top_p in LLM
 
@@ -118,7 +118,7 @@ For a quick follow up from last post to understand high/low temperature in LLM (
 
 Top P is the threshold of cumulated probability mass from token A to token X. For a given probability distribution, a higher top p value allows more long tail tokens. It gives more flexibility than a simple top K threshold for different context and different shape of the token probability distribution. For most cases, the combination of temperature and top_p setting can be good enough to control a LLM behavior.
 
-![alt text](fine-tune.003.png)
+![alt text](/images/fine-tune.003.png)
 
 ## Understand temperature in LLM
 
@@ -128,7 +128,7 @@ Some friends recently asked me the question, why high temperature gives more cre
 
 Here it is one single picture to understand it: it is the "T" from softmax with temperature from Hinton et al “Distilling the Knowledge in a Neural Network“ https://lnkd.in/ghCdXgWx With top-k/top-p token selection for LLM's next token prediction, higher temperature gives more "flat" probability distribution so long tail tokens have better chance to be chosen, thus more creativity. It is the root cause of these high-low temperature behaviors.
 
-![alt text](fine-tune.002.png)
+![alt text](/images/fine-tune.002.png)
 
 ## Fine tune a LLM: how much memory do I need?
 
@@ -151,4 +151,4 @@ Remember, actual usage may vary based on specific architectures and frameworks. 
 
 Surely, there are other ways like LoRa or QLoRA of Parameter-Efficient Fine-Tuning (PEFT), along with some drawback and limits. Let's talk about it next time.
 
-![alt text](fine-tune.001.png)
+![alt text](/images/fine-tune.001.png)
