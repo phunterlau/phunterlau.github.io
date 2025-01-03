@@ -2,6 +2,22 @@
 
 It is a live blog post of some knowledge snippets of AI to bridge the gap among text books, papers, other blog posts. Most content has been posted on my Linkedin.
 
+## Understand Multi-head Latent Attention (MLA)
+
+In [Deekseek-v3](https://github.com/deepseek-ai/DeepSeek-V3) technical report, the team introduces Multi-head Latent Attention (MLA). MLA leverages two key insights about attention mechanisms: (1) attention matrices exhibit low-rank properties since token relationships often focus on limited patterns (local context, semantic anchors), and (2) information bottleneck can help preserve essential patterns while discarding redundant ones.
+The process flows as:
+
+```
+CopyInput h_t → [Joint KV Compression via W_DKV] → Latent c_KV 
+           → [Up-project] → Keys k_C and Values v_C (content)
+           + [Separate RoPE branch] → Positional k_R
+```
+The joint compression ($h_t$ → $c_{KV}$) preserves crucial correlations between keys and values that would be lost in independent compression. Meanwhile, separating positional information ($k_R$) exploits the simpler structure of positional relationships. The compressed latent space (d_c ≈ d/14) creates an information bottleneck that forces the network to preserve only the most informative attention patterns during optimization, effectively acting as implicit regularization.
+
+This design reduces memory from $\mathcal{O}(N*d_h*n_h)$ to $\mathcal{O}(N*d_c + N*d^R_h)$ while maintaining model quality, as the compression preserves the dominant singular values of the attention matrix that carry the most important relationship information.
+
+![alt text](/images/fine-tune.016.png)
+
 ## Understand Reinforced fine tuning
 
 ReFT (Reasoning with Reinforced Fine-Tuning) <https://arxiv.org/abs/2401.08967> addresses a fundamental limitation in LLM reasoning by extending beyond traditional supervised fine-tuning's single-path learning approach. The method employs a two-stage process: an initial supervised warm-up followed by a PPO-based reinforcement learning phase that enables exploration of multiple valid reasoning paths, with a critical KL divergence constraint that prevents catastrophic forgetting of pre-trained knowledge while enabling controlled exploration. During the RL phase, the model samples various Chain-of-Thought (CoT) approaches - for example, when solving a math problem about hourly wages, it might explore different strategies like time conversion (50min to 5/6 hour), per-minute rate calculation (\$ 12/60 * 50), or direct proportion ((50/60) * \$ 12) - and receives rewards based on answer correctness (1 for correct, 0.1 for extractable but incorrect, 0 for invalid), while a KL divergence term (β=0.01 for P-CoT, 0.05 for N-CoT) maintains stability by preventing excessive deviation from the warm-up policy. What's particularly remarkable is ReFT's effectiveness with limited training data - requiring only hundreds of examples to achieve significant improvements. This efficiency stems from its ability to generate multiple learning signals from each example through active exploration of the reasoning space, creating a self-augmenting training process where each example seeds the discovery of various solution strategies while maintaining alignment with the pre-trained knowledge via KL constraints. ReFT maximizes learning from each example by exploring multiple reasoning paths while using the KL divergence to maintain useful pre-trained knowledge, effectively creating a self-augmenting training process that generates diverse learning signals from limited examples. The method's success stems from its ability to learn from both successful and unsuccessful reasoning attempts, combined with a natural reward structure that eliminates the need for a separate reward model. When integrated with inference-time techniques like majority voting and reward model reranking, ReFT demonstrates even more impressive results.
