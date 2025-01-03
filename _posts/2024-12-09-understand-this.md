@@ -14,7 +14,7 @@ CopyInput h_t → [Joint KV Compression via W_DKV] → Latent c_KV
 ```
 The joint compression ($h_t$ → $c_{KV}$) preserves crucial correlations between keys and values that would be lost in independent compression. Meanwhile, separating positional information ($k_R$) exploits the simpler structure of positional relationships. The compressed latent space (d_c ≈ d/14) creates an information bottleneck that forces the network to preserve only the most informative attention patterns during optimization, effectively acting as implicit regularization.
 
-This design reduces memory from $\mathcal{O}(N*d_h*n_h)$ to $\mathcal{O}(N*d_c + N*d^R_h)$ while maintaining model quality, as the compression preserves the dominant singular values of the attention matrix that carry the most important relationship information.
+This design reduces memory from $\mathcal{O}(Nd_h n_h)$ to $\mathcal{O}(Nd_c + Nd^R_h)$ while maintaining model quality, as the compression preserves the dominant singular values of the attention matrix that carry the most important relationship information.
 
 ![alt text](/images/fine-tune.016.png)
 
