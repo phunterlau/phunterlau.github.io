@@ -4,7 +4,7 @@ It is a live blog post of some knowledge snippets of AI to bridge the gap among 
 
 ## Understand Multi-head Latent Attention (MLA)
 
-In [Deekseek-v3](https://github.com/deepseek-ai/DeepSeek-V3) technical report, the team introduces Multi-head Latent Attention (MLA). MLA leverages two key insights about attention mechanisms: (1) attention matrices exhibit low-rank properties since token relationships often focus on limited patterns (local context, semantic anchors), and (2) information bottleneck can help preserve essential patterns while discarding redundant ones.
+In [Deepseek-v3](https://github.com/deepseek-ai/DeepSeek-V3) technical report, the team introduces Multi-head Latent Attention (MLA). MLA leverages two key insights about attention mechanisms: (1) attention matrices exhibit low-rank properties since token relationships often focus on limited patterns (local context, semantic anchors), and (2) information bottleneck can help preserve essential patterns while discarding redundant ones.
 The process flows as:
 
 ```
