@@ -2,6 +2,21 @@
 
 It is a live blog post of some knowledge snippets of AI to bridge the gap among text books, papers, other blog posts. Most content has been posted on my Linkedin.
 
+## Understand Direct Preference Optimization (DPO)
+
+DPO (Direct Preference Optimization) simplifies RLHF by transforming preference learning into a binary classification problem. Instead of using a separate reward model and complex RL optimization like PPO, DPO directly optimizes the policy to match human preferences. 
+
+The workflow involves: 
+
+1. collecting preferred/rejected response pairs, 
+2. computing logits from both the current model and a frozen reference model, 
+3. calculating the preference gap between responses, and 
+4. optimizing using a simple binary cross-entropy loss while maintaining closeness to the reference model via a KL constraint. 
+
+This approach achieves comparable results to PPO-based RLHF with significantly reduced complexity and computational cost.
+
+![alt text](/images/fine-tune.018.png)
+
 ## Understand tree attention in coder LLM
 
 Tree attention in code LLMs enhances structural understanding by incorporating Abstract Syntax Tree (AST) relationships into the attention mechanism. The model learns syntax-aware attention patterns through multi-head attention where different heads specialize in parent-child relationships, variable scoping, and data flow. During training, attention scores are computed as $A = \text{softmax}\left(\frac{QK^T}{\sqrt{d}} + M\right)V$ , where $M$ combines syntax, scope, and data flow masks. These masks guide attention to respect code structure: syntax masks encode AST hierarchy, scope masks enforce variable visibility rules, and data flow masks track variable dependencies. This enables the model to maintain structural coherence even when processing linear code input. This approach is necessary because code fundamentally differs from natural language in its strict hierarchical structure and precise execution semantics. While natural language models can tolerate some structural ambiguity, code requires exact understanding of scope boundaries, variable dependencies, and control flow. Without tree attention, models struggle with long-range dependencies (like tracking variable definitions across functions), nested structures (maintaining proper code blocks), and scope rules (knowing which variables are accessible where). This affects their ability to generate syntactically valid and executable code. Tree attention solves these issues by explicitly modeling the AST structure through attention masks, enabling the model to reason about code in a way that matches how compilers and developers understand it.
