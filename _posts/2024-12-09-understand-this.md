@@ -2,6 +2,15 @@
 
 It is a live blog post of some knowledge snippets of AI to bridge the gap among text books, papers, other blog posts. Most content has been posted on my Linkedin.
 
+## Understand Advantages in GRPO
+
+In DeepSeek Math and R1 papers, GRPO (Group Relative Policy Optimization) introduces a fundamental redesign of advantage computation in policy optimization. While advantage traditionally measures how much better an action is compared to a baseline, the way to compute this advantage marks a key difference between GRPO and traditional PPO (Proximal Policy Optimization).
+Traditional PPO relies on a learned value network and temporal difference learning to estimate advantages, requiring additional memory and computation to maintain a separate critic network. In contrast, GRPO takes a more direct approach by sampling multiple solutions for the same problem and computing advantages through group statistics. This group-based normalization naturally captures the relative performance of different solutions.
+The impact of this design is particularly significant for mathematical reasoning tasks. By eliminating the value network, GRPO reduces memory usage by approximately half. More importantly, the group-based comparison aligns well with how mathematical solutions should be evaluated - relative to other approaches to the same problem. This makes GRPO especially effective for training models to develop better reasoning strategies, as demonstrated in both DeepSeek Math and R1's strong performance on mathematical reasoning benchmarks, while maintaining computational efficiency and training stability.
+
+![alt text](/images/fine-tune.019.png)
+
+
 ## Understand Direct Preference Optimization (DPO)
 
 DPO (Direct Preference Optimization) simplifies RLHF by transforming preference learning into a binary classification problem. Instead of using a separate reward model and complex RL optimization like PPO, DPO directly optimizes the policy to match human preferences. 
