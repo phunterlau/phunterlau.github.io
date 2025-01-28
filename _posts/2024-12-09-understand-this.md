@@ -2,6 +2,12 @@
 
 It is a live blog post of some knowledge snippets of AI to bridge the gap among text books, papers, other blog posts. Most content has been posted on my Linkedin.
 
+## Understand Janus
+
+The architectural design of Deepseek Janus <https://github.com/deepseek-ai/Janus> reflects both engineering pragmatism and cognitive science inspiration. From an engineering perspective, the dual-pathway design with a shared transformer backbone elegantly solves the tension between specialized processing needs and unified reasoning. The separate visual encoders optimize for their specific tasks - semantic understanding versus detailed reconstruction - while the shared transformer enables efficient parameter usage and cross-task learning. This architecture also aligns with Minsky's Society of Mind theory, where intelligence emerges from the coordination of specialized agents. The visual pathways act as dedicated sensory agents with distinct expertise, while the transformer serves as a higher-level cognitive space where different representations can interact and integrate, similar to how human association cortices coordinate between sensory and linguistic processing. This parallel suggests that effective multimodal AI architectures might benefit from embracing both specialized processing and unified reasoning, mirroring the brain's strategy of maintaining dedicated systems while enabling high-level integration.
+
+![alt text](/images/fine-tune.020.png)
+
 ## Understand Advantages in GRPO
 
 In DeepSeek Math and R1 papers, GRPO (Group Relative Policy Optimization) introduces a fundamental redesign of advantage computation in policy optimization. While advantage traditionally measures how much better an action is compared to a baseline, the way to compute this advantage marks a key difference between GRPO and traditional PPO (Proximal Policy Optimization).
