@@ -1,6 +1,6 @@
 # The Physics of mHC: Why Deep Learning Needs Energy Conservation
 
-When I first read the **Manifold-Constrained Hyper-Connections (mHC)** paper, I didn't see it as just another optimization trick or a clever use of Sinkhorn iterations, but the other way round. **This is physics.**
+When I first read the **Manifold-Constrained Hyper-Connections (mHC)** paper <https://www.arxiv.org/abs/2512.24880> , I didn't see it as just another optimization trick or a clever use of Sinkhorn iterations, but the other way round. **This is physics.**
 
 I suspect the root motivation for this paper wasn't initially "Let's use the Birkhoff Polytope." I believe the authors started with a fundamental physical intuition: **Conservation of Energy**. They likely asked, *"How do we build a deep network that routes information without creating or destroying it?"* Very "first principle" thought, right? The math like doubly stochastic matrices, the Birkhoff manifold is just the implementation detail used to enforce this physical law.
 
