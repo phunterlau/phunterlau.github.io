@@ -85,6 +85,8 @@ To ensure **Gradient Energy Conservation**, we must apply the same logic to $W^T
 
 $$\sum_{j} W_{ij} = 1 \quad (\forall i)$$
 
+![alt text](/images/mhc2.jpg)
+
 ## The Mathematical Engine: Doubly Stochastic Matrices & Sinkhorn-Knopp
 
 When we combine these three physical requirements:
