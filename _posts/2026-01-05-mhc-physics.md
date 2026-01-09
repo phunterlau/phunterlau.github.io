@@ -87,6 +87,39 @@ $$\sum_{j} W_{ij} = 1 \quad (\forall i)$$
 
 ![alt text](/images/mhc2.jpg)
 
+## Another angle: The Information Theoretic View
+
+If Physics is about conserving energy, **Information Theory** is about conserving bits.
+
+### The Enemy: The Data Processing Inequality
+The fundamental law of information processing is the **Data Processing Inequality (DPI)**. It states that as you pass data $X$ through a chain of processors (layers), the Mutual Information $I(X; Y)$ can only decrease or stay the same. You cannot *create* information about the input deep in the network.
+
+$$I(X; Y_{deep}) \le I(X; Y_{shallow})$$
+
+Standard layers are often **Lossy Channels**.
+* **Rank Collapse:** If $W$ projects high-dimensional data into a lower-dimensional subspace, information is permanently deleted.
+* **Mode Collapse:** If the network decides "only feature A matters" and sets weights for feature B to near-zero, feature B is lost forever.
+
+### The Solution: The Network as a "Packet Switcher"
+What is the most information-efficient operation possible? A **Permutation**.
+If you simply shuffle the order of the data packets, $H(y) = H(x)$. You have preserved 100% of the information.
+
+mHC relaxes this "Hard Permutation" into a **"Soft Routing"** scheme via the Birkhoff Polytope (the set of doubly stochastic matrices).
+
+#### 1. "No Packet Left Behind" (Column Sum = 1)
+The Column Sum constraint ($\sum_i W_{ij} = 1$) is a guarantee of **Signal Preservation**.
+It dictates that 100% of the signal coming from Input Node $j$ *must* go somewhere. It cannot be multiplied by zero. It forces the network to find a destination for every feature.
+* *Info Theory Benefit:* This prevents the network from ignoring subtle features early on, preserving the **Channel Capacity** for deeper layers.
+
+#### 2. "The Democracy of Weights" (Majorization)
+The Row Sum constraint ($\sum_j W_{ij} = 1$) prevents **Hub Neurons**.
+No single output neuron is allowed to hoard all the connections. If a neuron wants to attend to one feature, it must ignore others.
+* *Info Theory Benefit:* This forces the information to be **"Spread Out"** (Maximized Entropy). It prevents the signal from collapsing into a few "spikes" and ensures a **Distributed Representation** where every neuron carries a share of the information load.
+
+By forcing the weight matrix to be Doubly Stochastic, mHC effectively turns the layer into a **Volume-Preserving Flow**. It allows the signal to be mixed and routed without being compressed (loss) or expanded (noise), fighting the Data Processing Inequality at every step.
+
+![alt text](/images/mhc3.jpg)
+
 ## The Mathematical Engine: Doubly Stochastic Matrices & Sinkhorn-Knopp
 
 When we combine these three physical requirements:
