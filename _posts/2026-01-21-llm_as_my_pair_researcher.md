@@ -55,6 +55,8 @@ Then came a practical instrumentation idea from the **`prover`**: use a fixed, n
 
 Triangulating between Tony, myself, and the **`prover`** was a key to avoid self-deception, or **narcissism**. Discussing hypotheses and measurement choices with Tony, bringing back results, and iterating again with the **`prover`** created a human–human–AI triangle that reduced the risk of falling in love with any single story. It’s easier to challenge measurements and choose between alternative explanations when multiple **`validators`** and the **`prover`** are involved.
 
+![alt text](/images/kl_prover.jpg)
+
 One reason this collaboration mode works is that it lets you move quickly between empirical observation and theory. After staring at “lurking compliance tokens” long enough, Tony and I wanted to know whether the phenomenon was inevitable in a deeper sense.
 
 A reference that helped anchor that intuition is Wolf et al., “Fundamental Limitations of Alignment in Large Language Models” ([arXiv:2304.11082](https://arxiv.org/abs/2304.11082)). One way to summarize the link to my observation is: if an undesired behavior has nonzero probability mass, then there exist prompts that can amplify it, and longer interactions make amplification easier. In that light, seeing an “Absolutely” lurking beneath a “Sorry” is not spooky. It is the visible residue of probability mass that alignment has attenuated but not removed.
