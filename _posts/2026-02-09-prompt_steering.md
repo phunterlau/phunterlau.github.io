@@ -10,6 +10,21 @@ This post is an author's retrospective clarification. We want to propose a unifi
 
 ---
 
+## 0. The Recap: What is Logit Gap Steering?
+
+For those who haven't read the [original paper](https://arxiv.org/html/2506.24056v1), here is the core concept.
+
+Most LLM safety mechanisms (RLHF) function by suppressing the probability of "compliant" tokens (e.g., "Sure", "Here") and boosting "refusal" tokens (e.g., "I cannot", "Sorry") when a harmful query is detected. We quantify this as the **Logit Gap**:
+
+$$
+\Delta Z = Z_{\mathrm{compliance}} - Z_{\mathrm{refusal}}
+$$
+
+**The Method:** Instead of treating the model as a black box, we treat the input prompt as a continuous variable. We compute the gradient of the Logit Gap with respect to the input embeddings and **optimize a sequence of "suffix" tokens** to maximize $\Delta Z$.
+
+**The Finding:** We discovered that we don't need to rewrite the prompt semantically. By appending a specific sequence of tokens (often nonsensical to humans, like `! ! mode unleashed`), we can inject a precise "steering vector" that forces $\Delta Z > 0$, causing the model to bypass refusal and answer the query. The effectiveness of this simple additive attack hints at a deeper linear structure within the model's safety alignment.
+
+
 ## 1. Unification: Prompts as Discrete Layer 0 Vectors
 
 In mechanistic interpretability, researchers like **Turner et al. (2023)** regarding *Activation Addition* and **Zou et al. (2023)** regarding *Representation Engineering* have established that adding vectors to internal hidden states can control high-level concepts. We argue that "Prompt Engineering" is simply a constrained version of this same operation, a.k.a. prompting = vector steering + constant.
