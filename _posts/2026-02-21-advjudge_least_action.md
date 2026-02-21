@@ -22,7 +22,7 @@ For an autoregressive language model being steered toward a specific output, we 
 * **The Kinetic Cost ($T$):** The information surprisal (negative log-likelihood). Moving to low-probability, unnatural tokens requires high "energy."
 * **The Potential Field ($V$):** The Judge model's alignment training creates a steep penalty landscape that pulls the model toward the  logit. Our objective is to invert this and slide into the  basin.
 
-AdvJudge-Zero formulates the attack as a constrained optimization problem. Using a Lagrange multiplier (), it finds the stationary path () of the unconstrained Lagrangian:
+AdvJudge-Zero formulates the attack as a constrained optimization problem. Using a Lagrange multiplier ($\lambda$), it finds the stationary path ($\delta \mathcal{L} = 0$) of the unconstrained Lagrangian:
 
 $$\mathcal{L} = \underbrace{\sum_{i=1}^k -\log P(t_i \mid t_{<i})}_{\mathrm{Action Cost}} - \lambda \underbrace{(Z_{yes} - Z_{no})}_{\mathrm{Target Potential}}$$
 
