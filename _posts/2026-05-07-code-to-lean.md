@@ -1,8 +1,4 @@
-# Can an LLM Formally Verify Your Code? A Feasibility Study
-
-*May 2026 · ML/security research*
-
----
+# Can an LLM Formally Verify Your Code?
 
 When a language model tells you "this function is correct," how much should you trust it? The answer is: not very much — unless the claim comes with a machine-checked proof. This post describes a pipeline that asks an LLM to translate a Python function into Lean 4, proposes a correctness theorem, and then runs five independent gates to decide whether to trust the result. The point is not the translation; it's the gates.
 
