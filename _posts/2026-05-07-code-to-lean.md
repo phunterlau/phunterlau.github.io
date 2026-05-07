@@ -201,3 +201,30 @@ The main message from the benchmarks: **the gates work.** Gate D (differential t
 ---
 
 *Code, examples, and run artifacts: [github.com/phunterlau/code2lean](https://github.com/phunterlau/code2lean)*
+
+---
+
+## References
+
+**Lean 4 and tooling**
+
+- de Moura, L. & Ullrich, S. [The Lean 4 Theorem Prover and Programming Language](https://lean-lang.org/papers/lean4.pdf). CADE 2021.
+- Mathlib Community. [Mathlib4](https://github.com/leanprover-community/mathlib4).
+
+**LLM-assisted theorem proving**
+
+- Polu, S. & Han, J.M. [Generative Language Modeling for Automated Theorem Proving](https://arxiv.org/abs/2009.03393). arXiv:2009.03393, 2020. (GPT-f)
+- Jiang, A.Q. et al. [Draft, Sketch, and Prove: Guiding Formal Theorem Provers with Informal Proofs](https://arxiv.org/abs/2210.12283). arXiv:2210.12283, ICLR 2023.
+- Yang, K. et al. [LeanDojo: Theorem Proving with Retrieval-Augmented Language Models](https://arxiv.org/abs/2306.15626). arXiv:2306.15626, NeurIPS 2023.
+- Xin, H. et al. [DeepSeek-Prover: Advancing Theorem Proving in LLMs through Large-Scale Synthetic Data](https://arxiv.org/abs/2405.14333). arXiv:2405.14333, 2024.
+- Trinh, T.H. et al. [AI achieves silver-medal standard solving International Mathematical Olympiad problems](https://deepmind.google/blog/ai-solves-imo-problems-at-silver-medal-level/). Google DeepMind, 2024. (AlphaProof)
+
+**LLM + code formal verification**
+
+- Misu, M.J. et al. [Towards AI-Assisted Synthesis of Verified Dafny Methods](https://arxiv.org/abs/2402.00247). arXiv:2402.00247, FSE 2024.
+- Pei, K. et al. [Can Large Language Models Reason about Program Invariants?](https://proceedings.mlr.press/v202/pei23a.html). ICML 2023.
+
+**Verified security-critical software**
+
+- Zinzindohoué, J.-K. et al. [HACL\*: A Verified Modern Cryptographic Library](https://dl.acm.org/doi/10.1145/3133956.3134043). CCS 2017.
+- Klein, G. et al. [seL4: Formal Verification of an OS Kernel](https://dl.acm.org/doi/10.1145/1629575.1629596). SOSP 2009.
