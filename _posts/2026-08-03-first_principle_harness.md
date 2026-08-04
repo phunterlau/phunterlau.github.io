@@ -78,8 +78,7 @@ $$
 a_t^*
 =
 
-\underset{a}{\operatorname{arg,max}}
-;
+\underset{a}{\operatorname{argmax}}
 \mathbb{E}
 \left[
 U\left(s_{t+1:T}\right)
