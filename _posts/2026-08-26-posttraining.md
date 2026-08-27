@@ -2,7 +2,7 @@
 
 I have been reading Nathan Lambert's [RLHF Book](https://rlhfbook.com/) and following his lecture and video series. What I appreciate most is the way he has systematically organized a rapidly evolving field into an engineering framework. SFT, reward models, PPO, DPO, RLVR, distillation, regularization, infrastructure, and newer agentic methods often appear as separate topics, while his treatment makes their engineering relationships much easier to see.
 
-I wanted to approach the same landscape from a complementary direction. With my physics background, I naturally ask whether a complicated collection of methods can be reconstructed from a small set of primitives, like Coulomb's law for classical electromagnetism. One can begin with a simple interaction such as $F = k_e \frac{|q_1 q_2|}{r^2}$, then introduce additional structure only when the current description becomes insufficient. To be clear: Maxwell's equations are not derived from Coulomb's law alone, but we haven't had Maxwell's equations for LLM, right?
+I wanted to approach the same landscape from a complementary direction. With my physics background, I naturally ask whether a complicated collection of methods can be reconstructed from a small set of primitives, like Coulomb's law for classical electromagnetism. One can begin with a simple interaction such as $F = k_e \frac{q_1 \times q_2}{r^2}$, then introduce additional structure only when the current description becomes insufficient. To be clear: Maxwell's equations are not derived from Coulomb's law alone, but we haven't had Maxwell's equations for LLM, right?
 
 ![alt text](/images/posttraining.jpg)
 
