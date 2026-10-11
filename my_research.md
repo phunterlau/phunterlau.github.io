@@ -27,6 +27,11 @@ I am currently especially interested in extending these ideas to **tool use and 
 
 ### 2026
 
+**Adversarial Cues in Decision Models Used as Judges: The Role of Request Presentation**
+**Hongliang Liu**
+[arXiv:2610.11436](https://arxiv.org/abs/2610.11436)
+Shows that a one-colon edit to an incorrect answer can sharply increase false acceptance by a judge under sorted-key JSON presentation, while the same candidates are rejected under insertion-order presentation.
+
 **AdvJudge-Zero: Binary Decision Flips in LLM-as-a-Judge via Adversarial Control Tokens**
 Tung-Ling Li, Yuhao Wu, **Hongliang Liu**
 **Accepted at NeurIPS 2026** · [arXiv:2512.17375](https://arxiv.org/abs/2512.17375)
